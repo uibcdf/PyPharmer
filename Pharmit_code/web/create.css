@@ -1,0 +1,149 @@
+body {
+    background-color: rgb(39,0,72);
+    color: rgb(64,64,64); #rgb(255,255,255);
+}
+a {
+    color: rgb(108,113,196);
+}
+textarea {
+    resize: horizontal;
+}
+a:visited {
+    color: rgb(108,113,196);
+}
+.font {
+    font-family: "Open Sans", sans-serif;
+    font-size: 19.5pt;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(108,113,196);
+    line-height: 32pt;
+    letter-spacing: normal;
+}
+.cont {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	min-width: 960px;
+	min-height: 150px;
+	position: absolute;
+	left: 0px;
+	z-index: 1;
+	margin-top: 50px;
+	padding-bottom: 20px;
+	border: 0;
+	background-color: rgb(255,255,255);
+	box-shadow: 0px 2px 5px rgb(128,128,128);
+}
+.cont-2 {
+	margin-left: 15px;
+}
+.font-2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15.0pt;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(64,64,64);#rgb(255,255,255);
+    line-height: 20pt;
+    letter-spacing: normal;
+}
+.font-3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 36.0pt;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(64,64,64);#rgb(255,255,255);
+    line-height: 49pt;
+    letter-spacing: normal;
+}
+.font-4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12.0pt;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(64,64,64)#rgb(255,255,255);
+    line-height: 20pt;
+    letter-spacing: normal;
+}
+.input {
+    position: absolute;
+    left: 125px;
+    width: 300px;
+    height: 25px;
+    font-size: 9.0pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    line-height: 11pt;
+    letter-spacing: normal;
+    text-indent: 0;
+    padding-top: 0pt;
+    margin-top: -0pt;
+    margin-bottom: 0pt;
+    text-align: left;
+}
+.input-2 {
+    width: 300px;
+    height: 25px;
+    font-size: 9.0pt;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    line-height: 11pt;
+    letter-spacing: normal;
+    text-indent: 0;
+    padding-top: 0pt;
+    margin-top: -0pt;
+    margin-bottom: 0pt;
+    text-align: left;
+}
+.submit {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-family: "Open Sans", sans-serif;
+    font-size: 19.5pt;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(108,113,196);
+    line-height: 32pt;
+    letter-spacing: normal;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+.submit-2 {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(108,113,196);
+    line-height: 32pt;
+    letter-spacing: normal;
+    position: absolute;
+    left: 0px;
+}
+
+.librarystatus {
+	display: inline-block;
+	padding: 1em 1.5em;
+	width: 25em;
+	margin-bottom: 1em;
+	border-color: rgb(39,0,72);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 1em;	
+}
+
+.removelink:hover {
+	cursor:pointer;
+	text-decoration: underline; 
+}

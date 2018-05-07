@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content=
+          "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <meta charset="UTF-8">
+    <!--
+        <meta name="viewport" content="width=960">!-->
+    <title>pharmit: interactive exploration of chemical space
+    </title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+    a { color: #270048 }
+    em { font-variant: small-caps; }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel=
+          'stylesheet' type='text/css'>
+    <script src="js/jquery-2.1.3.js" defer type="text/javascript">
+    </script>
+    <script src="js/numeral.js" async="" type="text/javascript">
+    </script>
+    <script type="text/javascript" src="js/index.js" defer>
+    </script>
+    <script type="text/javascript" src="js/msg.js" defer>
+    </script>
+    <script src="js/table-of-contents.js" defer>
+    </script>
+  </head>
+  <body id="body">
+    <div class="cont">
+      <div class="section">
+        <div class="cont-2">
+          <div class="colwrapper">
+            <div class="cont-3">
+              <img src="images/pasted-image-448.png" alt=""
+                   class="img">
+            </div>
+          </div>
+          <div class="colwrapper-2">
+            <div class="cont-4">
+              <div class="cont-5">
+                <p class="para">
+                  <span class="font">
+                    <a href=
+                       "http://sourceforge.net/projects/pharmit/">code
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="cont-6">
+              <div class="cont-7">
+                <p class="para-2">
+                  <span class="font-2">
+                    <a href=
+                       "index.php">home
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="cont-8">
+              <div class="cont-9">
+                <p class="para-3">
+                  <span class="font-3">
+                    <a href=
+                       "mailto:dkoes@pitt.edu">contact
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-2">
+      <div class="cont-10">
+        <div class="colwrapper-3">
+          <div class="cont-11">
+            <div class="cont-12">
+              <p class="para-4">
+                <span class="font-4">help
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="cont-13">
+            <div class="cont-14">
+              <p class="para-5">
+                <span class="font-5">interactive exploration of
+                  pharmit
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cont-51">
+        <div class="section-4">
+          <div class="cont-52">
+          <span class="font-21" id="getting-started">Getting Started</span>
+				<p class="noindent">
+				  <span class=
+						"font-23"><em>pharmit </em>
+				  is a web server that facilitates virtual screening: it enables
+				  users to search for small molecules based on their structural and
+				  chemical similarity to another small molecule, with the goal of
+				  identifying those that bind to a target molecule (typically a
+				  protein receptor or enzyme). The search can take as input either a
+				  small molecule, a set of pharmacophore features (which will be
+				  subsequently described in greater detail), or both a protein and a
+				  pharmacophore or a small molecule for which a putative binding pose is known. 
+				  This help follows <u>
+				  <a href="search.html?SESSION=examples/4pps.json">
+					  the 4pps example</a></u>, which the user may choose to follow simultaneously 
+				  by clicking the link, or by other search initiation methods described below.</span></p>
+		<span class="font-21" id="initiate-search">Initiating a Search</span>
+			  <p class="noindent">
+			  <span class="font-23">
+				  There are three ways to initiate a search with pharmit: from
+				  a PDB accession code, from receptor/ligand files (including
+				  both a receptor and ligand as well as a ligand by itself), or by using
+				  a pharmacophore generated from an external source and uploaded to
+				  pharmit. Each method is described in detail below.</span></p>
+			  <p class="para-23">
+			  <span class="subheader">From PDB</span></p>
+			  <p class="noindent">
+			  <span class="font-23">
+				  A structure can be obtained directly from the PDB by entering its four-character PDB
+				  identifier in the first text box after "start from PDB" as shown in the figure 
+				  below. To initiate the 4pps search using this method, the user may enter "4pps"
+				  in the box. A list of possible small molecules will be generated automatically in the
+				  second box, from which the user may choose a ligand of interest (ESE, in our case).
+				  Binding site waters may be excluded entirely, used as part of the
+				  ligand as optional pharmacophore features to include in the
+				  similarity search, or used as part of the receptor to identify
+				  which pharmacophore features of the ligand are relevant to binding (for our example,
+				  we will exclude them). To proceed with the search, the user should next choose
+				  "submit".</span></p>
+				  <br class="newline">
+				  <img src="images/main.png" class="centeredimg" alt="Getting started"  align="middle"><br>
+			  <p class="para-23">
+			  <span class="subheader">From receptor/ligand files</span></p>
+			  <p class="noindent">
+				  <span class="font-23">
+				  Alternatively the user may first choose "enter pharmit search" in
+				  order to upload structural files. After being redirected to the
+				  search page, choose "Load Features" to upload a small molecule
+				  structure in sdf, pdb, mol2, or xyz format. A receptor file in any
+				  of the same formats may optionally be provided as well; our example uses
+				  both the ligand and receptor. To initiate the 4pps
+				  search using this method, the user should load the attached <u><a href="examples/receptor.pdb">receptor</a></u>
+				  and <u><a href="examples/LIG.pdb">ligand</a></u> files as the receptor and features, respectively. 
+				  These files were obtained directly from the 4pps PDB entry and are provided 
+				  as examples of possible input formats. If a
+				  receptor is provided via the "Load Receptor" option, it should be 
+				  one for which the binding pose of the provided ligand is known, or to 
+				  which the ligand was previously docked.
+				  <em>pharmit</em> will not dock the two
+				  compounds, and since the receptor is used to identify which
+				  pharmacophore features of the ligand are relevant to binding,
+				  providing a pair of structures that are oriented arbitrarily will
+				  fail to identify a relevant pharmacophore. If a ligand structure is provided without a receptor,
+				  the query will proceed normally but the user will not be able to 
+				  energy minimize the results of queries, since this calculation depends on the presence
+				  of a receptor. The second
+			      image below shows an example of uploading a ligand structure without a receptor.</span>
+				  <br class="newline">
+				  <img src="images/load.png" alt="Loading structures"  class="centeredimg" 
+					    align="middle">
+				  <br class=
+				  "newline">
+				  <br class="newline">
+				  <img src="images/lonesomeligand.png" alt="Using a ligand by itself to generate queries"  class="centeredimg" 
+					    align="middle">
+				  <br class=
+				  "newline"></p>
+			  <p class="para-23">
+			  <span class="subheader">From external sources</span></p>
+			  <p class="noindent">
+				  <span class="font-23">
+				  The user may also use an external program such as MOE, LigBuilder,
+				  LigandScout, or Pharmer to generate a pharmacophore query file and
+				  then upload that file to pharmit directly. It is provided in the same
+				  manner as a ligand structure file; that is, the user should click "enter
+				  pharmit search" on the main page, than click "Load Features" to upload a 
+				  query file in MOE, LigBuilder, LigandScout, or Pharmer format. A receptor
+				  file may optionally also be uploaded via the "Load Receptor" button.</span></p>
+		<span class="font-21" id="visualization">Visualization</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  After the desired structures are provided,
+				  <em>pharmit</em>
+				  will identify all pharmacophore features present in the ligand if a
+				  ligand structure rather than a pharmacophore query file was
+				  provided. If a receptor structure was provided, it will identify
+				  which of these features are relevant to the interaction between the
+				  protein-ligand pair using distance cutoffs between interacting features and will display only these interacting features. Next,
+				  it will center the features and use a set of default visualization
+				  options to display the provided structures, including the
+				  electrostatic surface of the receptor. If the user is dissatisfied
+				  with the default visualization scheme, they may scroll down to the
+				  "Visualization" menu in the left sidebar and toggle the options as
+				  desired. In particular, if the electrostatic surface of the
+				  receptor is obscuring the pharmacophore features, receptor surface
+				  opacity may be reduced and at the lowest setting becomes entirely
+				  transparent. In the graphical display window, the left mouse button
+				  may be used to rotate the scene and the right mouse button or
+				  center wheel may be used to zoom. Clicking on spheres - both
+				  pharmacophore spheres and shape constraint spheres - toggles
+				  between a solid and wire display. In order to maximize the viewable
+				  graphical display area, the sidebar may be hidden by pressing the
+				  left-pointing arrowhead at the top right of the
+				  sidebar.</span></p>
+				  <br class=
+					  "newline">
+				  <img src="images/visual.png" alt="Visualization" align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="pharmacophores">Pharmacophore Representations</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  Pharmacophores are used to define molecular similarity and perform
+				  structural alignment. A pharmacophore describes the spatial arrangement of
+          the essential features of an interaction. Each pharmacophore query feature includes both a type and a radius. 					The pharmacophore type derives from the underlying chemistry of
+				  functional groups and in the context of
+				  <em>pharmit</em>
+				  may be defined as an aromatic, hydrogen donor, hydrogen acceptor,
+				  hydrophobic, negative ion, or positive ion. The set of
+				  pharmacophore features chosen to represent a particular ligand and their
+				  geometric orientation is used to identify other molecules in a
+				  database that also possess that configuration of features. The radius
+				  of a pharmacophore query feature determines how closely a molecule in the
+				  database must match the configuration of the query.
+				  To be considered similar, the pharmacophore feature points of a
+				  molecule in the database must overlap the corresponding pharmacophore feature spheres
+				  in the query. The likelihood of this occurring increases with
+				  larger feature radius.
+				  <br class="newline">
+				  <br class="newline">
+				  A list of pharmacophore features is provided in the "Pharmacophore" menu in
+				  the sidebar. Pharmacophore features can be toggled "on" or "off" to include
+				  them in or remove them from the search. Pressing the "x" to the
+				  right of the pharmacophore removes it from the menu entirely. By
+				  pressing the arrow to the left of a given pharmacophore, the user
+				  can vary the type, radius, and location of a pharmacophore, as well
+				  as optionally restrict the number of atoms associated with a
+				  hydrophobic pharmacophore and the phi or psi angle associated with
+				  pharmacophore features, such as hydrogen bonds, that have an associated direction.</span></p>
+				  <br class="newline">
+				  <img src="images/pharmacophore.png" alt="Pharmacophores"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+				  At the bottom of the "Pharmacophore" menu, there are buttons to
+				  sort the pharmacophore features and to add new features. Sorting
+				  places all active pharmacophores at the top of the list and
+				  organizes them by type. Pharmacophore features added
+				  using the "Add" button are initialized generically to hydrophobic
+				  pharmacophores of radius 1.0 located at (0,0,0), and must be
+				  set to appropriate types and locations by the
+				  user.
+				  <br class=
+					  "newline">
+				  <img src="images/add.png" alt="Additional pharmacophores"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="shape">Shape Constraints</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  Users have the option of using shape as an additional constraint on
+				  the similarity search. The ligand's surface or a set of
+				  user-defined spheres may be used as an inclusive constraint, the
+				  receptor's surface or a set of user-defined spheres may be
+				  used as an exclusive constraint, or both inclusive and exclusive
+				  shapes may be used. Multiple spheres may be defined for both
+				  inclusive and exclusive search by choosing the "Spheres" option in
+				  the dropdown menu and pressing "Add". This will display a menu
+				  allowing the user to set the position and size of the sphere.
+				  Pressing "Add" again will enable the user to continue adding
+				  spheres. The shape constraint is applied differently depending on
+				  whether it is used to search the database prior to pharmacophore
+				  filtering or to filter results returned by a pharmacophore search.
+				  In the former case, a shape search returns molecules in the search
+				  database that contain the entire included shape and do not overlap
+				  any part of the excluded shape. In the latter case, the results of
+				  the pharmacophore search are filtered by shape to ensure that at
+				  least one heavy atom falls within the inclusive shape and no heavy
+				  atom centers fall within any exclusive shape. In either case, the
+				  results of the initial search are aligned to that search for the
+				  secondary filtering - thus for a given molecule a pose may exist
+				  that allows it to meet the secondary filter, but it will not be
+				  returned if the aligned pose resulting from the initial search does
+				  not meet those constraints. Our recommendation is that users define
+				  both inclusive and exclusive shape constraints using the ligand and
+				  receptor surfaces and use them as secondary filtering on the
+				  results of a pharmacophore search. The order of application of
+				  pharmacophore and shape constraints can be swapped using the second
+				  button from the top of the left sidebar, which switches between
+				  "Pharmacophore Search
+				  <span class="cmsy-10x-x-120">&#8594;
+				  </span>
+				  Shape Filter" and "Shape Search
+				  <span class=
+						"cmsy-10x-x-120">&#8594;
+				  </span> Pharmacophore Filter".</span></p>
+				  <br class=
+					  "newline">
+				  <img src="images/shape.png" alt="Shape constraints"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+				  <img src="images/sphere.png" alt="Sphere constraints"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="filtering">Hit Reduction and Feasibility Screening</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  Additional hit reduction and screening options are provided in the
+				  "Filters" menu. The three options for hit reduction include
+				  restricting the maximum hits returned for every configuration, for
+				  every molecule, and overall. The maximum hits per configuration
+				  constraint is applied greedily,
+				  returning the first <em>n</em> results found without prioritizing any other
+				  aspects of those results. The other two constraints are applied
+				  after the results are sorted, giving priority to those of higher
+				  rank (lower RMSD for pharmacophore searches and higher similarity scores for shape searches). 
+				  
+				  There are seven options given for hit screening. These
+				  include constraints on molecular weight, the number of rotatable
+				  bonds, logP (a measure of lipophilicity), polar surface area
+				  (indicative of ability to permeate cell membranes), the number of
+				  aromatic groups, the number of hydrogen bond acceptors, and the
+				  number of hydrogen bond donors. Properties are computing using OpenBabel. 
+				  <br class="newline">
+				  <img src="images/reduce.png" alt="Filtering options"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+				  <img src="images/screen.png" alt="More filters"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="databases">Database Selection</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  When the user is satisfied with the query and constraints, a
+				  database to search should be selected by pressing the arrow next to
+				  the first button on the left sidebar. The options include
+				  CHEMBL20, ChemDiv, MolPort, NCI Open Chemical Repository, and
+				  PubChem, as well as several publicly available user-contributed
+				  libraries and any public or private libraries the user has
+				  personally submitted using the "create" menu accessible from the
+				  <em>pharmit</em> main page. Once a database is selected,
+				  pressing the search button initiates
+				  the search.
+          <br class="newline">
+				  <img src=
+					   "images/database.png" alt="Database selection" align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="sessions">Saving and Loading Sessions</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  The two buttons at the bottom of the left sidebar enable users to
+				  save and load
+				  <em>pharmit</em> sessions. Saving a session generates a
+				  file documenting the receptor, features, visualization state, shape
+				  constraints, and any additional features the user specified. This
+				  file can then be loaded to recreate the state of the interface at
+				  the time the file was created.
+				  <br class="newline">
+				  <img src="images/session.png" alt="Session files"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+		<span class="font-21" id="results">Managing Search Results</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  When a database search is initiated, a right sidebar opens to
+				  display the search results. This sidebar may be hidden by pressing
+				  the right-facing arrow at the top left of the sidebar, or it may be
+				  closed by pressing the "x" in the upper right corner. Results may
+				  be sorted in increasing or decreasing order based on RMSD, mass, or
+				  number of rotatable bonds; the sorting method is determined by
+				  pressing on the name of desired sorting method, and pressing the
+				  name again to toggle between increasing and decreasing order.
+				  Lavender arrowheads to the right of the sorting method names
+				  indicate whether sorting is being performed in increasing (up) or
+				  decreasing (down) order.
+				  <br class="newline">
+				  <img src="images/sort.png" alt="Sorting options"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+				  The query aligned pose may be visualized by clicking on the corresponding row in the results panel.
+				  Hovering over a row reveals alternative identifiers for the compounds in other databases hosted by <em>pharmit</em> such as PubChem.  A selected compound has the option of initiating a new query using the compound as the query ligand.			  
+				  				  <br class="newline">
+
+		<span class="font-21" id="minimize">Saving and Minimizing Results</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  There are two buttons available at the bottom of the right sidebar.
+				  The "Save" button allows the results to be saved in their current
+				  state; this generates a single file in sdf format that contains all
+				  the structures that were returned by the query. The structures are
+				  sorted in the output in the same order that they are sorted in the
+				  sidebar. Pressing the "Minimize" button before saving allows the
+				  user to assess the favorability of the interaction between the
+				  protein and the ligands returned by the search. This feature energy
+				  minimizes the results using smina, a fork of AutoDock Vina, using
+				  the default Vina scoring function. Using this scoring function, a
+				  more negative score indicates that the corresponding interaction is
+				  more favorable according to the scoring function's model of
+				  protein-ligand interaction; thus large positive scores indicate
+				  unfavorable interactions, and large negative scores indicate more
+				  favorable interactions. If the user chooses to minimize the
+				  results, they may be sorted by score or RMSD of the minimized pose
+				  from the starting pose (which was aligned to the query) by pressing
+				  the name of the sorting method. Additional filters may also be
+				  applied by setting values for maximum score, maximum minimized
+				  RMSD, and requesting that only one pose be retained for each
+				  conformer. Once the filters have been set as desired, the user
+				  should press "Apply" to enforce them. Pressing "Save" after
+				  minimizing the results generates a single sdf file containing the
+				  minimized structures that includes their minimized scores; it is
+				  often useful to rank the structures in order of increasing score so
+				  that the best results can be
+				  reviewed first. We additionally recommend that results be filtered by mRMSD (e.g. 2&Aring;) to eliminate poses with significant deviations from the original query.
+				  <br class="newline">
+				  <img src="images/minimize.png" alt="Minimization"  align="middle"  class="centeredimg" ><br> 
+		<span class="font-21" id="submission">User-submitted Databases</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  Users may submit databases to be used for searches using the "create" area on the main page.
+				  <img src="images/create.png" alt="Creating databases"  align="middle"  class="centeredimg" >
+				  <br class="newline">
+				  If a user chooses to proceed as a guest, no private databases may
+				  be submitted and public databases the user submits have a maximum
+				  size of 10,000 conformers. If the user creates an account and logs
+				  in, the user may create one private database with at most 1,000,000
+				  conformers and public databases the user submits may have at most
+				  10,000,000 conformers. The database files should be in SMILES or
+				  sdf format. Conformers will be automatically generated from SMILES
+				  strings, but the structures contained in the sdf files will be used
+				  directly and should therefore be created using a high quality conformer generator.
+				  File
+				  sizes are capped at 200MB, so submitting a compressed file is
+				  recommended. The number of permitted conformers in a database may
+				  be extended by emailing a short justification to
+				  dkoes@pitt.edu.
+				  <br class="newline">
+				  <img src="images/submit.png"
+					   alt="Database submission form"  align="middle"  class="centeredimg" ><br>
+		<span class="font-21" id="background">Related Software</span><br>
+			<p class="noindent">
+				<span class="font-23">
+				  <em>pharmit</em> is completely open-source with all the code
+				  required to setup and host the web application available  
+				  <a href="http://sourceforge.net/projects/pharmit/">through SourceForge</a>.
+				  
+				  <em>pharmit</em> integrates several software packages actively developed by David
+				  Koes and his research group, including <a href="http://www.ncbi.nlm.nih.gov/pubmed/21604800">Pharmer</a>, an efficient
+				  molecular search algorithm based on pharmacophores; 
+				  <a href="http://www.ncbi.nlm.nih.gov/pubmed/23379370">smina</a>, a fork
+				  of AutoDock Vina that performs pose scoring, small molecule
+				  docking, and structural minimization and permits custom scoring
+				  function development; 
+				  <a href="http://www.ncbi.nlm.nih.gov/pubmed/26085707">ShapeDB</a>, software that performs a similarity
+				  search based on molecular shape; and 
+				  <a href="http://www.ncbi.nlm.nih.gov/pubmed/25505090">3Dmol.js</a>, a highly optimized
+				  molecular visualization
+				  package utilizing WebGL.
+				  </span></p>
+				  				  <br class="newline">
+
+			<span class="font-21" id="background">Additional Help</span><br>
+			<p class="noindent">
+							<span class="font-23">
+				  For additional help with <em>pharmit</em> please <a href="http://sourceforge.net/p/pharmit/discussion/general/">post to the discussion board</a> or
+				  <a href="mailto:dkoes@pitt.edu">contact us</a> directly.
+				  				  <br class="newline">
+				  <br class="newline">
+				  </span>				  
+				</p>
+			  </div>
+        </div>
+      </div>
+    </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73085320-1', 'auto');
+  ga('send', 'pageview');
+
+</script>    
+  </body>  
+</html>
