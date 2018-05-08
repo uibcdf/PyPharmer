@@ -1,0 +1,22 @@
+name: pypharmer
+channels:
+  - conda-forge
+  - omnia
+  - anaconda
+  - defaults
+dependencies:
+  - ca-certificates=2018.4.16=0
+  - certifi=2018.4.16=py36_0
+  - ncurses=5.9=10
+  - openssl=1.0.2o=0
+  - pip=9.0.3=py36_0
+  - python=3.6.5=1
+  - readline=7.0=0
+  - setuptools=39.1.0=py36_0
+  - sqlite=3.20.1=2
+  - tk=8.6.7=0
+  - wheel=0.31.0=py36_0
+  - xz=5.2.3=0
+  - zlib=1.2.11=0
+prefix: /home/diego/Myopt/Miniconda/miniconda3/envs/pypharmer
+
