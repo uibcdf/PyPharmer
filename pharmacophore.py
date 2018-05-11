@@ -71,9 +71,9 @@ class Point:
 
         pass
 
-class Query:
+class Pharmacophore:
 
-    query_file     = None
+    input_file     = None
 
     anchors        = []
     points         = []
@@ -83,12 +83,12 @@ class Query:
     _json          = None
     _pandas        = None
 
-    def __init__(self, query_file='', receptor=False, ligand=False):
+    def __init__(self, input_file='', receptor=False, ligand=False):
 
-        self.query_file    = query_file
+        self.input_file    = input_file
 
-        self._json          = json.loads(open(query_file).read())
-        self._pandas        = pd.read_json(query_file)
+        self._json          = json.loads(open(input_file).read())
+        self._pandas        = pd.read_json(input_file)
 
         tmp_json           = self._pandas
         tmp_json_keys      = tmp_json.keys()
