@@ -1,6 +1,5 @@
 import numpy as np
 import simplejson as json
-import pandas as pd
 from .viewer import get_nglview as _get_nglview
 
 class Receptor:
@@ -81,16 +80,14 @@ class Pharmacophore:
     with_receptor  = False
     with_ligand    = False
     _json          = None
-    _pandas        = None
 
     def __init__(self, input_file='', receptor=False, ligand=False):
 
         self.input_file    = input_file
 
         self._json          = json.loads(open(input_file).read())
-        self._pandas        = pd.read_json(input_file)
 
-        tmp_json           = self._pandas
+        tmp_json           = self._json
         tmp_json_keys      = tmp_json.keys()
 
         # If there is a receptor to be loaded (and we want it).
