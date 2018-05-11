@@ -61,7 +61,8 @@ class Point:
 
             if 'svector' in tmp_json_keys:
                 tmp_vector   = json_object.get('svector')
-                self.svector = np.array([tmp_vector.get('x'),tmp_vector.get('y'),tmp_vector.get('z')])
+                if tmp_vector is not None:
+                    self.svector = np.array([tmp_vector.get('x'),tmp_vector.get('y'),tmp_vector.get('z')])
 
             if 'vector' in tmp_json_keys:
                 tmp_vector   = json_object.get('vector')[0]

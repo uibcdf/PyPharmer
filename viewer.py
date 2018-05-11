@@ -8,10 +8,12 @@ color_code={ 'Hydrophobic':        [0.100, 1.000, 0.000],\
              'Aromatic':           [0.627, 0.1254, 0.941],\
              'NegativeIon':        [1.00, 0.00, 0.00],\
              'PositiveIon':        [0.00, 0.00, 1.00],\
+             'InclusionSphere':    [0.00, 1.00, 1.00],\
              'Other':              [0.74, 0.74, 0.74],\
              'PhenylalanineAnalog':[1.0, 1.0, 0.0],\
              'LeuValAnalog':       [1.0, 1.0, 0.0] \
              }
+# The color for InclusionSphere was given at random
 
 
 
