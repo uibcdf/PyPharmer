@@ -1,6 +1,8 @@
 import nglview
 import mdtraj
 import numpy as np
+import tempfile
+import os
 
 color_code={ 'Hydrophobic':        [0.100, 1.000, 0.000],\
              'HydrogenAcceptor':   [1.000, 0.84, 0.000],\
@@ -17,17 +19,43 @@ color_code={ 'Hydrophobic':        [0.100, 1.000, 0.000],\
 
 
 
-def get_nglview(query,arrow_norm=2.0,arrow_radius=0.2):
+def get_nglview(pharmacophore,receptor=True,ligand=True,arrow_norm=2.0,arrow_radius=0.2):
+
+    view_with_ligand=False
+    view_with_receptor=False
 
     tmp_view=nglview.NGLWidget()
     arrow_norm=np.sqrt(arrow_norm)
 
-    for point in query.points:
+    if pharmacophore.with_receptor and receptor:
+        view_with_receptor=True
+        tmp_receptor_file = tempfile.NamedTemporaryFile(mode='w+',delete=False,suffix='.pdb')
+        tmp_receptor_file.write(pharmacophore.receptor)
+        tmp_receptor_file.close()
+        tmp_view.add_component(tmp_receptor_file.name)
+
+    if pharmacophore.with_ligand and ligand:
+        view_with_ligand=True
+        tmp_ligand_file = tempfile.NamedTemporaryFile(mode='w+',delete=False,suffix='.mol2')
+        tmp_ligand_file.write(pharmacophore.ligand)
+        tmp_ligand_file.close()
+        tmp_view.add_component(tmp_ligand_file.name)
+
+    for point in pharmacophore.points:
         color=color_code[point.name]
         tmp_view.shape.add_sphere(point.position.tolist(),color,point.radius,point.name)
         if point.svector is not None:
             source_array=point.position
             end_array=(point.position+arrow_norm*point.svector)
             tmp_view.shape.add_arrow(source_array.tolist(),end_array.tolist(),color,arrow_radius)
+
+    if view_with_receptor:
+        tmp_receptor_file.close()
+        os.unlink(tmp_receptor_file.name)
+
+    if view_with_ligand:
+        tmp_ligand_file.close()
+        os.remove(tmp_ligand_file.name)
+
 
     return tmp_view

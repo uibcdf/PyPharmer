@@ -82,7 +82,7 @@ class Pharmacophore:
     with_ligand    = False
     _json          = None
 
-    def __init__(self, input_file='', receptor=False, ligand=False):
+    def __init__(self, input_file=''):
 
         self.input_file    = input_file
 
@@ -92,17 +92,25 @@ class Pharmacophore:
         tmp_json_keys      = tmp_json.keys()
 
         # If there is a receptor to be loaded (and we want it).
-        if receptor:
-            if 'receptor' in tmp_json_keys:
-                self.with_receptor = True
-                self.receptor      = tmp_json.get('receptor')
+        if 'receptor' in tmp_json_keys:
+            self.with_receptor = True
+            self.receptor      = tmp_json.get('receptor')
 
 
         # If there is a ligand to be loaded (and we want it).
-        if ligand:
-            if 'sdf' in tmp_json_keys:
+        if 'sdf' in tmp_json_keys:
                 self.with_ligand   = True
                 self.ligand        = tmp_json.get('sdf')
+                #sdf = urllib.unquote(sdf) 
+                ###write it out to a temp file
+                #tfout = tempfile.NamedTemporaryFile(suffix = '.pdb', delete=False)
+                #tmpname = tfout.name 
+                #tfout.write(sdf)
+                #tfout.close()
+
+        if 'ligand' in tmp_json_keys:
+                self.with_ligand   = True
+                self.ligand        = tmp_json.get('ligand')
 
         # If there are anchors
         if 'anchors' in tmp_json_keys:
