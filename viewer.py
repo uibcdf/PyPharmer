@@ -32,7 +32,9 @@ def get_nglview(pharmacophore,receptor=True,ligand=True,arrow_norm=2.0,arrow_rad
         tmp_receptor_file = tempfile.NamedTemporaryFile(mode='w+',delete=False,suffix='.pdb')
         tmp_receptor_file.write(pharmacophore.receptor)
         tmp_receptor_file.close()
-        tmp_view.add_component(tmp_receptor_file.name)
+        rec=tmp_view.add_component(tmp_receptor_file.name)
+        #rec.add_surface ('protein', opacity=0.4)
+        rec.add_line ('protein')
 
     if pharmacophore.with_ligand and ligand:
         view_with_ligand=True
