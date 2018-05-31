@@ -39,11 +39,13 @@ class Descriptors:
                         vector=json_object.get ('vector')
                         vector_on=json_object.get ('vector_on')
             
-                        if 'vector' and ('vector_on') in json_object.keys ():
+                        if 'vector' and 'vector_on' in json_object.keys ():
                             if vector_on ==1:
-                                descriptor = ([name,json_object.get('x'),json_object.get('y'),json_object.get('z'), vector])
-                                print (descriptor)
-        
+                                for element in vector:
+                                    descriptor = ([name,json_object.get('x'),json_object.get('y'),json_object.get('z'),
+                                                    element['x'], element['y'],element['z']])
+                                    print (descriptor)
+                                    
                         if 'vector' and 'vector_on' in json_object.keys ():
                             if vector_on ==0:
                                 vector=[0]
@@ -52,8 +54,10 @@ class Descriptors:
             
                         if 'vector' and not 'vector_on' in json_object.keys ():
                             if vector!=None:
-                                descriptor= ([name,json_object.get('x'),json_object.get('y'),json_object.get('z'), vector])
-                                print (descriptor)
+                                for element in vector:
+                                    descriptor = ([name,json_object.get('x'),json_object.get('y'),json_object.get('z'),
+                                                    element['x'], element['y'],element['z']])
+                                    print (descriptor)
                             if vector==None:
                                 vector=[0]
                                 descriptor= ([name,json_object.get('x'),json_object.get('y'),json_object.get('z'),vector[0],vector[0],vector[0]])
