@@ -23,10 +23,10 @@ class Receptor:
     def __init__ (self,json_object=None):
 
         self.name     = None
-        self.receptor  = None  
-        
+        self.receptor  = None
+
         if json_object is not None:
-            
+
             tmp_json_keys = json_object.keys()
 
             self.name     = json_object.get ('name')
@@ -78,7 +78,7 @@ class Point:
         self.enabled    = True
 
         if json_object is not None:
-            
+
             tmp_json_keys = json_object.keys()
 
             self.name     = json_object.get('name')
@@ -103,17 +103,16 @@ class Pharmacophore:
     input_file        = None
     anchors           = []
     points            = []
-    all_points        = False
-    enabled           = True
+    select            = None
     with_receptor     = None
     with_ligand       = None
     _json             = None
 
-    def __init__(self, input_file='', all_points=False, enabled=True, with_receptor=True, with_ligand=True):
+    def __init__(self, input_file='', select='', with_receptor=True, with_ligand=True):
 
         self.input_file    = input_file
 
-        self._json          = json.loads(open(input_file).read())
+        self._json         = json.loads(open(input_file).read())
         tmp_json           = self._json
         tmp_json_keys      = tmp_json.keys()
 
@@ -134,19 +133,19 @@ class Pharmacophore:
             if 'sdf' in tmp_json_keys:
                 self.with_ligand   = True
                 self.ligand        = tmp_json.get('sdf')
-                #sdf = urllib.unquote(sdf) 
+                #sdf = urllib.unquote(sdf)
                 ###write it out to a temp file
                 #tfout = tempfile.NamedTemporaryFile(suffix = '.pdb', delete=False)
-                #tmpname = tfout.name 
+                #tmpname = tfout.name
                 #tfout.write(sdf)
                 #tfout.close()
-        
+
             if 'ligand' in tmp_json_keys:
                 self.with_ligand   = True
                 self.ligand        = tmp_json.get('ligand')
 
         if with_ligand is False:
-            
+
             pass
 
         # If there are anchors
@@ -155,25 +154,23 @@ class Pharmacophore:
                 self.anchors.append(Anchor(json_object))
 
         # List of enabled points
-        if enabled is True:
-            for json_object in tmp_json.get ('points'):
-                if 'enabled' in json_object.keys():
-                    if json_object.get ('enabled'):
+        if select is 'enabled':
+            if 'points' in tmp_json_keys:
+                for json_object in tmp_json.get ('points'):
+                    if json_object.get ('enabled')==True:
                         self.points.append(Point(json_object))
 
-        if enabled is False:
-            pass
+        if select is 'disabled':
+            if 'points' in tmp_json_keys:
+                for json_object in tmp_json.get ('points'):
+                    if json_object.get ('enabled')==False:
+                        self.points.append(Point(json_object))
 
         # List of all points
-        if all_points is True:
+        if select is 'all':
             if 'points' in tmp_json_keys:
                 for json_object in tmp_json.get('points'):
                     self.points.append(Point(json_object))
-        
-        if all_points is False:
-            pass
-
-        pass
 
     def get_view(self,viewer='nglview',arrow_norm=2.0,arrow_radius=0.2):
 

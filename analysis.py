@@ -1,6 +1,7 @@
 import numpy as np
 import simplejson as json
 from pprint import pprint
+from .viewer import  scatter_plot as _scatter_plot
 
 
 # Descriptors list:
@@ -156,11 +157,7 @@ class Descriptors:
 
         pass
 
-    def analyze (self,name='', method=''):
+    def plot_points ():
 
-        name    =   'all'
-        method  =   'kmeans'
-
-        if name is 'all':
-            for i in points:
-                print ('ok')
+        return _scatter_plot ()
+    pass
