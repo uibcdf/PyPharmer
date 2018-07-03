@@ -132,3 +132,9 @@ def scatter_plot ():
     ax.set_ylabel('Y Coordinates')
     ax.set_zlabel('Z Coordinates')
     plt.show ()
+
+
+def cliques ():
+    plt.subplot (121)
+    nx.draw (GRAPH,with_labels=False)
+    plt.show ()
