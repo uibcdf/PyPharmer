@@ -135,6 +135,6 @@ def scatter_plot ():
 
 
 def cliques ():
-    plt.subplot (121)
-    nx.draw (GRAPH,with_labels=False)
-    plt.show ()
+    plt.subplot(121)
+    nx.draw_networkx (GRAPH, pos=nx.random_layout(GRAPH), with_labels=False)
+    plt.show()

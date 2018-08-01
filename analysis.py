@@ -149,23 +149,18 @@ class Descriptors:
     pass
 
     def get_cliques ():
-        nodes=[]
-        for element in self.points:
-            node.append ((element[1],element[2],element[3]))
 
         GRAPH= nx.Graph ()
-        GRAPH.add_nodes_from (nodes)
-
-        for i in range (len(nodes)):
-            for j in range (len(nodes)):
-                if j>i:
-                    GRAPH.add_edge (nodes[j],nodes[i])
-
-        print ('nodes:',GRAPH.number_of_nodes ())
-        print ('edges:', GRAPH.number_of_edges ())
-
+        for element in self.points:
+            GRAPH.add_node (node_for_adding=(element[1],element[2],element[3]), name=element[0])
+            for i in range (len(GRAPH.nodes)):
+                for j in range (len(GRAPH.nodes)):
+                    if j>i:
+                        GRAPH.add_edge (list(GRAPH.nodes)[j],list(GRAPH.nodes)[i])
+        print ('Number of nodes:',GRAPH.number_of_nodes ())
+        print ('Number of edges:',GRAPH.number_of_edges ())
     pass
 
     def plot_cliques ():
         return _cliques ()
-    pass
+        pass
