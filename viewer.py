@@ -37,7 +37,6 @@ def get_nglview(pharmacophore,receptor=True,ligand=True,arrow_norm=2.0,arrow_rad
         tmp_receptor_file.write(pharmacophore.receptor)
         tmp_receptor_file.close()
         rec=tmp_view.add_component(tmp_receptor_file.name)
-        rec.add_surface ('protein', opacity=0.2)
         rec.add_line ('protein')
 
     if pharmacophore.with_ligand and ligand:
