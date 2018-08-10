@@ -1,0 +1,59 @@
+HETATM    1  C1  PRC B   2      11.382  61.304  12.628  1.00 64.17           C  
+HETATM    2  C2  PRC B   2      10.399  60.835  11.743  1.00 62.55           C  
+HETATM    3  N3  PRC B   2      10.479  59.572  11.247  1.00 63.56           N  
+HETATM    4  C4  PRC B   2      11.492  58.717  11.573  1.00 63.78           C  
+HETATM    5  C5  PRC B   2      12.519  59.120  12.460  1.00 64.73           C  
+HETATM    6  C6  PRC B   2      12.453  60.432  12.988  1.00 64.12           C  
+HETATM    7  C7  PRC B   2      13.594  58.192  12.789  1.00 67.49           C  
+HETATM    8  N8  PRC B   2      13.373  56.828  12.741  1.00 67.42           N  
+HETATM    9  C9  PRC B   2      14.332  55.908  13.025  1.00 66.26           C  
+HETATM   10  N10 PRC B   2      15.582  56.358  13.376  1.00 69.31           N  
+HETATM   11  C11 PRC B   2      15.880  57.682  13.445  1.00 70.13           C  
+HETATM   12  C12 PRC B   2      14.882  58.637  13.150  1.00 69.40           C  
+HETATM   13  N13 PRC B   2      14.108  54.572  12.978  1.00 61.84           N  
+HETATM   14  C14 PRC B   2      15.105  53.583  13.020  1.00 58.55           C  
+HETATM   15  C15 PRC B   2      15.054  52.673  14.123  1.00 57.52           C  
+HETATM   16  C16 PRC B   2      16.030  51.622  14.253  1.00 55.68           C  
+HETATM   17  C17 PRC B   2      17.018  51.514  13.268  1.00 55.15           C  
+HETATM   18  C18 PRC B   2      17.078  52.400  12.184  1.00 56.48           C  
+HETATM   19  C19 PRC B   2      16.127  53.444  12.029  1.00 58.03           C  
+HETATM   20  C20 PRC B   2      16.333  54.305  10.797  1.00 56.15           C  
+HETATM   21  N21 PRC B   2      16.006  50.684  15.318  1.00 53.12           N  
+HETATM   22  C22 PRC B   2      14.936  50.257  16.009  1.00 56.45           C  
+HETATM   23  C23 PRC B   2      15.083  49.226  17.052  1.00 57.59           C  
+HETATM   24  C25 PRC B   2      13.949  48.748  17.770  1.00 58.58           C  
+HETATM   25  C26 PRC B   2      14.084  47.752  18.767  1.00 60.81           C  
+HETATM   26  C27 PRC B   2      15.364  47.243  19.033  1.00 62.13           C  
+HETATM   27  N28 PRC B   2      16.445  47.709  18.333  1.00 61.88           N  
+HETATM   28  C29 PRC B   2      16.339  48.674  17.366  1.00 60.10           C  
+HETATM   29  O29 PRC B   2      13.797  50.659  15.803  1.00 58.03           O  
+CONECT    1    2    6
+CONECT    2    1    3
+CONECT    3    2    4
+CONECT    4    3    5
+CONECT    5    4    6    7
+CONECT    6    1    5
+CONECT    7    5    8   12
+CONECT    8    7    9
+CONECT    9    8   10   13
+CONECT   10    9   11
+CONECT   11   10   12
+CONECT   12    7   11
+CONECT   13    9   14
+CONECT   14   13   15   19
+CONECT   15   14   16
+CONECT   16   15   17   21
+CONECT   17   16   18
+CONECT   18   17   19
+CONECT   19   14   18   20
+CONECT   20   19
+CONECT   21   16   22
+CONECT   22   21   23   29
+CONECT   23   22   24   28
+CONECT   24   23   25
+CONECT   25   24   26
+CONECT   26   25   27
+CONECT   27   26   28
+CONECT   28   23   27
+CONECT   29   22
+END

@@ -1,0 +1,75 @@
+HETATM    1  C1  STI B   4      11.733  61.731  12.899  1.00 33.24           C  
+HETATM    2  C2  STI B   4      10.689  61.244  12.040  1.00 35.04           C  
+HETATM    3  N3  STI B   4      10.749  59.946  11.520  1.00 32.64           N  
+HETATM    4  C4  STI B   4      11.794  59.085  11.799  1.00 32.91           C  
+HETATM    5  C5  STI B   4      12.887  59.510  12.661  1.00 31.37           C  
+HETATM    6  C6  STI B   4      12.835  60.855  13.206  1.00 32.37           C  
+HETATM    7  C7  STI B   4      14.008  58.554  12.941  1.00 31.01           C  
+HETATM    8  N8  STI B   4      13.843  57.251  12.508  1.00 29.09           N  
+HETATM    9  C9  STI B   4      14.794  56.299  12.701  1.00 29.43           C  
+HETATM   10  N10 STI B   4      15.974  56.634  13.348  1.00 29.05           N  
+HETATM   11  C11 STI B   4      16.198  57.919  13.804  1.00 28.95           C  
+HETATM   12  C12 STI B   4      15.223  58.930  13.617  1.00 29.05           C  
+HETATM   13  N13 STI B   4      14.540  55.006  12.227  1.00 28.64           N  
+HETATM   14  C14 STI B   4      15.462  53.949  12.382  1.00 27.88           C  
+HETATM   15  C15 STI B   4      15.268  53.070  13.484  1.00 25.22           C  
+HETATM   16  C16 STI B   4      16.156  51.953  13.726  1.00 25.17           C  
+HETATM   17  C17 STI B   4      17.252  51.742  12.829  1.00 26.63           C  
+HETATM   18  C18 STI B   4      17.468  52.617  11.705  1.00 27.17           C  
+HETATM   19  C19 STI B   4      16.590  53.727  11.455  1.00 26.81           C  
+HETATM   20  C20 STI B   4      16.891  54.608  10.226  1.00 27.58           C  
+HETATM   21  N21 STI B   4      15.995  51.034  14.819  1.00 25.21           N  
+HETATM   22  C22 STI B   4      15.012  51.019  15.807  1.00 24.82           C  
+HETATM   23  C23 STI B   4      14.885  49.810  16.651  1.00 24.87           C  
+HETATM   24  C25 STI B   4      13.654  49.527  17.386  1.00 25.22           C  
+HETATM   25  C26 STI B   4      13.568  48.350  18.205  1.00 26.90           C  
+HETATM   26  C27 STI B   4      14.716  47.459  18.283  1.00 25.69           C  
+HETATM   27  C28 STI B   4      15.918  47.766  17.537  1.00 25.52           C  
+HETATM   28  C29 STI B   4      16.004  48.917  16.737  1.00 26.21           C  
+HETATM   29  O29 STI B   4      14.232  51.920  16.039  1.00 22.98           O  
+HETATM   30  C46 STI B   4      14.738  46.201  19.142  1.00 26.89           C  
+HETATM   31  N48 STI B   4      15.927  46.047  20.011  1.00 27.12           N  
+HETATM   32  C49 STI B   4      15.913  44.732  20.776  1.00 27.40           C  
+HETATM   33  C50 STI B   4      17.190  44.602  21.663  1.00 26.52           C  
+HETATM   34  N51 STI B   4      17.262  45.784  22.624  1.00 27.01           N  
+HETATM   35  C52 STI B   4      17.267  47.095  21.874  1.00 25.58           C  
+HETATM   36  C53 STI B   4      16.023  47.207  20.966  1.00 25.33           C  
+HETATM   37  C54 STI B   4      18.421  45.627  23.511  1.00 27.71           C  
+CONECT    1    2    6
+CONECT    2    1    3
+CONECT    3    2    4
+CONECT    4    3    5
+CONECT    5    4    7    6
+CONECT    6    1    5
+CONECT    7    5    8   12
+CONECT    8    7    9
+CONECT    9    8   13   10
+CONECT   10    9   11
+CONECT   11   10   12
+CONECT   12    7   11
+CONECT   13    9   14
+CONECT   14   13   15   19
+CONECT   15   14   16
+CONECT   16   15   21   17
+CONECT   17   16   18
+CONECT   18   17   19
+CONECT   19   14   18   20
+CONECT   20   19
+CONECT   21   16   22
+CONECT   22   21   23   29
+CONECT   23   22   24   28
+CONECT   24   23   25
+CONECT   25   24   26
+CONECT   26   25   27   30
+CONECT   27   26   28
+CONECT   28   23   27
+CONECT   29   22
+CONECT   30   26   31
+CONECT   31   30   32   36
+CONECT   32   31   33
+CONECT   33   32   34
+CONECT   34   33   37   35
+CONECT   35   34   36
+CONECT   36   31   35
+CONECT   37   34
+END
