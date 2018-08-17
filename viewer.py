@@ -130,10 +130,10 @@ def scatter_plot ():
     ax.set_xlabel('X Coordinates')
     ax.set_ylabel('Y Coordinates')
     ax.set_zlabel('Z Coordinates')
-    plt.show ()
+    return plt.show ()
 
 
 def cliques ():
     plt.subplot(121)
     nx.draw_networkx (GRAPH, pos=nx.random_layout(GRAPH), with_labels=False)
-    plt.show()
+    return plt.show()

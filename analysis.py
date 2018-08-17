@@ -2,6 +2,7 @@ import numpy as np
 import simplejson as json
 from pprint import pprint
 import networkx as nx
+import itertools as it
 from .viewer import  scatter_plot as _scatter_plot
 
 
@@ -18,7 +19,24 @@ descriptors_list={ 'Hydrophobic':        1.0,\
              'PhenylalanineAnalog': 9.0,\
              'LeuValAnalog':        10.0 \
              }
+color_code={ 1.0:        [0.100, 1.000, 0.000],\
+             2.0:   [1.000, 0.84, 0.000],\
+             3.0:      'gray',\
+             4.0:           [0.627, 0.1254, 0.941],\
+             5.0:        [1.00, 0.00, 0.00],\
+             6.0:        [0.00, 0.00, 1.00],\
+             7.0:    [0.00, 1.00, 1.00],\
+             8.0:              [0.74, 0.74, 0.74],\
+             9.0:[1.0, 1.0, 0.0],\
+             10.0:       [1.0, 1.0, 0.0] \
+             }
 
+## This funtion was added to generate clique graph.
+def totuple(a):
+    try:
+        return tuple(totuple(i) for i in a)
+    except TypeError:
+        return a
 class Descriptors:
 
     def __init__(self,input_file='',json_object=None, select='enabled'):
@@ -144,23 +162,18 @@ class Descriptors:
         pass
 
     def plot_points ():
-
         return _scatter_plot ()
     pass
 
     def get_cliques ():
-
-        GRAPH= nx.Graph ()
-        for element in self.points:
-            GRAPH.add_node (node_for_adding=(element[1],element[2],element[3]), name=element[0])
-            for i in range (len(GRAPH.nodes)):
-                for j in range (len(GRAPH.nodes)):
-                    if j>i:
-                        GRAPH.add_edge (list(GRAPH.nodes)[j],list(GRAPH.nodes)[i])
-        print ('Number of nodes:',GRAPH.number_of_nodes ())
-        print ('Number of edges:',GRAPH.number_of_edges ())
+        G= nx.Graph (pharmacophore='descriptors')
+        for i in range (len(self.points)):
+            node=totuple(self.points[i])
+            G.add_node (node_for_adding=node)
+            color=color_code[node[0]]
+            result=list(it.combinations(G.nodes,2))
+            for j in list(result):
+                G.add_edge (j[0],j[1])
+        return nx.draw (G,pos=nx.spectral_layout(G),node_color=color)
+        print ('File:',file,' ','number or nodes:',G.number_of_nodes(),' ','Number of edges:',G.number_of_edges ())
     pass
-
-    def plot_cliques ():
-        return _cliques ()
-        pass
