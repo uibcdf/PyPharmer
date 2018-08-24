@@ -1,0 +1,18 @@
+Pre-built executables are provided for linux. The pre-built executables 
+are not necessarily kept in sync with the source code. 
+
+Note that pharmer does not work on 32-bit operating systems. 
+
+pharmer.static 
+------- 
+A 64-bit  static executable for linux (built on Ubuntu).
+
+pharmer.<OS>
+----------
+Older, archived versions of pharmer for outdated operating systems.
+Avoid using these if possible.
+
+load_query_0_1_5.tar.gz 
+----------------------- 
+Scripts for visualizing pharmer JSON formatted queries in pymol. 
+Note that Avogadro also has built-in visualization support.
