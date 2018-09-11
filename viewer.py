@@ -20,8 +20,6 @@ color_code={ 'Hydrophobic':        [0.100, 1.000, 0.000],\
              }
 # The color for InclusionSphere was given at random
 
-
-
 def get_nglview(pharmacophore,receptor=True,ligand=True,arrow_norm=2.0,arrow_radius=0.2):
 
     view_with_ligand=False
@@ -64,76 +62,26 @@ def get_nglview(pharmacophore,receptor=True,ligand=True,arrow_norm=2.0,arrow_rad
 
     return tmp_view
 
-def scatter_plot ():
+def scatter_plot (self):
 
-    Hydrophobic         = [[],[],[]]
-    HydrogenAcceptor    = [[],[],[]]
-    HydrogenDonor       = [[],[],[]]
-    Aromatic            = [[],[],[]]
-    NegativeIon         = [[],[],[]]
-    PositiveIon         = [[],[],[]]
-    InclusionSphere     = [[],[],[]]
-    Other               = [[],[],[]]
-    PhenylalanineAnalog = [[],[],[]]
-    LeuValAnalog        = [[],[],[]]
-
-    for element in self.points:
-
-        if element[0]==1.0:
-            Hydrophobic[0].append (element[1])
-            Hydrophobic[1].append (element[2])
-            Hydrophobic[2].append (element[3])
-        if element[0]==2.0:
-            HydrogenAcceptor[0].append (element[1])
-            HydrogenAcceptor[1].append (element[2])
-            HydrogenAcceptor[2].append (element[3])
-        if element[0]==3.0:
-            HydrogenDonor[0].append (element[1])
-            HydrogenDonor[1].append (element[2])
-            HydrogenDonor[2].append (element[3])
-        if element[0]==4.0:
-            Aromatic[0].append (element[1])
-            Aromatic[1].append (element[2])
-            Aromatic[2].append (element[3])
-        if element[0]==4.0:
-            NegativeIon[0].append (element[1])
-            NegativeIon[1].append (element[2])
-            NegativeIon[2].append (element[3])
-        if element[0]==5.0:
-            PositiveIon[0].append (element[1])
-            PositiveIon[1].append (element[2])
-            PositiveIon[2].append (element[3])
-        if element[0]==6.0:
-            Other[0].append (element[1])
-            Other[1].append (element[2])
-            Other[2].append (element[3])
-        if element[0]==7.0:
-            PhenylalanineAnalog[0].append (element[1])
-            PhenylalanineAnalog[1].append (element[2])
-            PhenylalanineAnalog[2].append (element[3])
-        if element[0]==8.0:
-            LeuValAnalog[0].append (element[1])
-            LeuValAnalog[1].append (element[2])
-            LeuValAnalog[2].append (element[3])
+    self.show = None
 
     fig = plt.figure()
     ax  = fig.add_subplot(111, projection='3d')
-    ax.scatter(Hydrophobic[0],Hydrophobic[1],Hydrophobic[2], color=[0.100, 1.000, 0.000])
-    ax.scatter(HydrogenAcceptor[0],HydrogenAcceptor[1],HydrogenAcceptor[2], color=[1.000, 0.84, 0.000])
-    ax.scatter(HydrogenDonor[0],HydrogenDonor[1],HydrogenDonor[2], color='black') #[1.000, 1.000, 1.000]
-    ax.scatter(Aromatic[0],Aromatic[1],Aromatic[2], color=[0.627, 0.1254, 0.941])
-    ax.scatter(NegativeIon[0],NegativeIon[1],NegativeIon[2], color=[1.00, 0.00, 0.00])
-    ax.scatter(PositiveIon[0],PositiveIon[1],PositiveIon[2], color=[0.00, 0.00, 1.00])
-    ax.scatter(Other[0],Other[1],Other[2], color=[0.74, 0.74, 0.74])
-    ax.scatter(PhenylalanineAnalog[0],PhenylalanineAnalog[1],PhenylalanineAnalog[2], color=[1.0, 1.0, 0.0])
-    ax.scatter(LeuValAnalog[0],LeuValAnalog[1],LeuValAnalog[2], color=[1.0, 1.0, 0.0])
+    for point in self.points:
+            color=color_code[point[0]]
+            ax.scatter(point[1],point[2],point[3], color=color)
+
     ax.set_xlabel('X Coordinates')
     ax.set_ylabel('Y Coordinates')
     ax.set_zlabel('Z Coordinates')
-    return plt.show ()
+    self.show = plt.show()
 
-
-def cliques ():
-    plt.subplot(121)
-    nx.draw_networkx (GRAPH, pos=nx.random_layout(GRAPH), with_labels=False)
-    return plt.show()
+def plot_cliques ():
+    self.graph = None
+    options = {'node_color': color_code[G.nodes[node]['name']],
+           'node_size': 100,
+           'width': 1,
+           }
+    self.graph=nx.draw_spectral (G,**options)
+    print ('Number or Nodes:', G.number_of_nodes(),' ','Number of Edges:',G.number_of_edges ())
