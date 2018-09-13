@@ -33,28 +33,28 @@ class Descriptors:
                         if 'vector' and 'vector_on' in json_object.keys ():
                             if vector_on ==1:
                                 for element in vector:
-                                    descriptor=np.array([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
-                                    element['x'], element['y'],element['z']],dtype=object)
+                                    descriptor=([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
+                                    element['x'], element['y'],element['z']])
 
                             if vector_on ==0:
                                 vector=[0]
-                                descriptor=np.array([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
-                                vector[0],vector[0],vector[0]],dtype=object)
+                                descriptor=([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
+                                vector[0],vector[0],vector[0]])
                             descriptors.append (descriptor)
 
                         if 'vector' and not 'vector_on' in json_object.keys ():
                             if vector!=None:
                                 for element in vector:
-                                    descriptor=np.array([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
-                                    element['x'], element['y'],element['z']],dtype=object)
+                                    descriptor=n([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
+                                    element['x'], element['y'],element['z']])
 
                             if vector==None:
                                 vector=[0]
-                                descriptor=np.array([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
-                                vector[0],vector[0],vector[0]],dtype=object)
+                                descriptor=([json_object.get('name'),json_object.get('x'),json_object.get('y'),json_object.get('z'),json_object.get ('radius'),
+                                vector[0],vector[0],vector[0]])
                             descriptors.append (descriptor)
 
-                self.points=np.array (descriptors)
+                self.points=np.array (descriptors,dtype=object)
 
         if select is 'disabled':
 
