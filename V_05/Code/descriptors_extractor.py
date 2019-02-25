@@ -4,7 +4,6 @@ from pprint import pprint
 import networkx as nx
 import itertools as it
 #from .viewer import  scatter_plot as _scatter_plot
-from .analysis import get_networkx as _get_networkx
 
 class Descriptors:
 
@@ -134,16 +133,3 @@ class Descriptors:
                         descriptors.append (descriptor)
 
                 self.points=np.array (descriptors)
-
-    def get_cliques (self,algorithm='networkx'):
-        if algorithm == 'networkx':
-            return _get_networkx(self,algorithm='networkx')
-        pass
-
-    def plot ():
-        return _plot_cliques ()
-    pass
-
-    def plot_points ():
-        return _scatter_plot ()
-    pass
